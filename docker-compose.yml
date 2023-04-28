@@ -1,0 +1,23 @@
+version: "3"
+services:
+ mongo-boat:
+   image: "mongo"
+   container_name: "boatmongodb"
+   ports:
+     - "27017:27017"
+   
+ spring_boat:
+   build: "./boatApp"
+   container_name: "spring_boat"
+   ports:
+    - "8080:8080"
+   links: 
+     - "mongo-boat"
+
+ angular_boat:
+   build: "./angular-boat"
+   container_name: "angular_boat"
+   ports:
+    - "80:80"
+
+
