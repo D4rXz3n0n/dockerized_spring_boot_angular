@@ -1,0 +1,7 @@
+com/test/boatApp/AuthController.class
+com/test/boatApp/AuthenticationBean.class
+com/test/boatApp/BoatAppApplication.class
+com/test/boatApp/BoatController.class
+com/test/boatApp/Boat.class
+com/test/boatApp/SecurityConfiguration.class
+com/test/boatApp/BoatRepository.class
