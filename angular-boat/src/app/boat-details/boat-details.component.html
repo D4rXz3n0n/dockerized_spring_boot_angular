@@ -1,0 +1,13 @@
+<div *ngIf="boat">
+  <h6>{{boat.name | uppercase}} Details</h6>
+  <div > Id: {{boat.id}}</div>
+  <div>
+    <label for="boat-name">Boat name: </label>
+    <input id="boat-name" [(ngModel)]="boat.name" placeholder="name">
+    <label for="boat-description">Description: </label>
+    <input id="boat-description" [(ngModel)]="boat.description" placeholder="description">
+    <button type="button" (click)="update()">Update</button>
+    <button type="button" (click)="delete()">Delete</button>
+  </div>
+</div>
+<app-messages></app-messages>

@@ -1,0 +1,17 @@
+<div *ngIf="authenticated; else callLogin">
+<button type="button" (click)="backHome()">Back home</button>
+<h1>Boats List:</h1>
+<ul class="boats">
+  <li *ngFor="let boat of boats">
+    <button [class.selected]="boat === selectedBoat" type="button" (click)="onSelect(boat)">
+      <span class="">{{boat.name}}</span>
+      <!--<span class="name">{{boat.name}}</span>
+      <span class="description">{{boat.description}}</span>-->
+    </button>
+  </li>
+</ul>
+<app-boat-details [boat]="selectedBoat" (deleteEvent)="onDeleted($event)"></app-boat-details>
+</div>
+<ng-template #callLogin>
+  {{login()}}
+</ng-template>

@@ -1,0 +1,13 @@
+<div *ngIf="authenticated; else callLogin">
+<h1>{{title}}</h1>
+<nav>
+  <button class="button1" routerLink="/add-boat">add Boat</button>
+  <button class="button2" routerLink="/list-boats">List boats</button>
+  <button class="button3" (click)="logout()">logout</button>
+</nav>
+<router-outlet></router-outlet>
+<app-messages></app-messages>
+</div>
+<ng-template #callLogin>
+  {{login()}}
+</ng-template>
