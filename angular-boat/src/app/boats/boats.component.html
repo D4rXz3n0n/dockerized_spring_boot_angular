@@ -1,16 +1,20 @@
 <div *ngIf="authenticated; else callLogin">
-<button type="button" (click)="backHome()">Back home</button>
+
+<button type="button" class="button3" (click)="logout()">Logout</button>
 <h1>Boats List:</h1>
-<ul class="boats">
-  <li *ngFor="let boat of boats">
-    <button [class.selected]="boat === selectedBoat" type="button" (click)="onSelect(boat)">
-      <span class="">{{boat.name}}</span>
-      <!--<span class="name">{{boat.name}}</span>
-      <span class="description">{{boat.description}}</span>-->
-    </button>
-  </li>
-</ul>
-<app-boat-details [boat]="selectedBoat" (deleteEvent)="onDeleted($event)"></app-boat-details>
+  <div *ngIf="boats.length>0; else emptyBoats">
+      <ul class="boats">
+          <li *ngFor="let boat of boats">
+              <button [class.selected]="boat === selectedBoat" type="button" (click)="onSelect(boat)">
+                  <span class="">{{boat.name}}</span>
+              </button>
+          </li>
+      </ul>
+  </div>
+ <ng-template #emptyBoats> <h2>No boats recorded ! Please add boats through the add form !</h2></ng-template>
+ <app-boat-details [boat]="selectedBoat" (deleteEvent)="onDeleted($event)"></app-boat-details>
+ <app-add-boat (addEvent)="onAdded($event)"></app-add-boat>
+ <app-messages></app-messages>
 </div>
 <ng-template #callLogin>
   {{login()}}

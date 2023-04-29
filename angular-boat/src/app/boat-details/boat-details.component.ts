@@ -17,7 +17,12 @@ export class BoatDetailsComponent {
 
 
   update(): void{
+
     if(this.boat!=undefined){
+      if(this.boat.name.length==0 || this.boat.description.length == 0){
+         this.messageService.add("ERROR: Please enter a valide name and a valid description !");
+         return;
+      }
       this.boatService.update(this.boat.id,this.boat.name,this.boat.description).subscribe(boat=>{
         this.messageService.add(`Successfully update boat id=${boat.id}`),
         this.boat = undefined,

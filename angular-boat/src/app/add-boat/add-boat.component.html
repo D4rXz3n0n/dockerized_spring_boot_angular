@@ -1,5 +1,4 @@
 <div *ngIf="authenticated; else callLogin">
-<button type="button" (click)="backHome()">Back Home</button>
 <h2>Add a new boat </h2>
   <div>
     <label for="boat-name">Boat name: </label>
@@ -8,7 +7,7 @@
     <input id="boat-description" [(ngModel)]="description" placeholder="description">
     <button type="button" (click)="addBoat()">Add Boat</button>
   </div>
-<app-messages></app-messages>
+<!--<app-messages></app-messages>-->
 </div>
 <ng-template #callLogin>
   {{login()}}
