@@ -1,5 +1,5 @@
 # dockerized_spring_boot_angular
-An example to how "Dockerize" spring boot backend with angular front
+An example to how "Dockerize" spring boot backend CRUD with angular front using basic authentication.
 # Dependencies
 You will need docker, docker-compose installed on your local machine
 # Run
